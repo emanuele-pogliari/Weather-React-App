@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.splash-screen {
+  animation: fadeIn 1s ease-in;
+}
+
+.splash-screen.fadeOut {
+  animation: fadeOut 1s ease-in; /* Appare gradualmente */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+body {
+  background-image: url("./assets/Sunny.jpg");
+  background-size: cover;
+  height: 100vh;
+}

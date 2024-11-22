@@ -1,1 +1,4 @@
-
+#root {
+  background-image: url("../assets/Sunny.jpg");
+  background-size: cover;
+}
