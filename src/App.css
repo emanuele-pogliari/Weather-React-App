@@ -28,8 +28,8 @@
   }
 }
 
-body {
-  background-image: url("./assets/Sunny.jpg");
+.main {
+  background: url("./assets/sunny.jpg") no-repeat center center;
   background-size: cover;
   height: 100vh;
 }

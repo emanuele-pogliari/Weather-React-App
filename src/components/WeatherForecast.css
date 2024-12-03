@@ -1,0 +1,15 @@
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s linear, opacity 0.4s ease;
+  opacity: 0;
+}
+
+.content.open {
+  max-height: 384px;
+  opacity: 1;
+}
+
+.prova {
+  width: calc(100% / 24);
+}

@@ -2,6 +2,8 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import MainContent from "./components/MainContent";
 import SplashScreen from "./components/SplashScreen";
+import "flowbite";
+import "flowbite/dist/flowbite.css";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -24,7 +26,7 @@ function App() {
           />
         </div>
       ) : (
-        <MainContent />
+        <MainContent className="main" />
       )}
     </>
   );
