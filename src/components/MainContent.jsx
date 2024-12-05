@@ -196,8 +196,16 @@ function MainContent() {
               <div className="text-center text-8xl myWeather">
                 {`${weatherData.temp.current.temperature_2m.toFixed(0)}°`}
               </div>
-              <div>{weatherData.region}</div>
-              <div>{weatherData.country}</div>
+              <div className="text-2xl">
+                {
+                  weatherConditions[weatherData.temp.current.weather_code]
+                    .description
+                }
+              </div>
+              <div>
+                <span>{weatherData.region}, </span>
+                <span>{weatherData.country}</span>
+              </div>
             </div>
             <div className="w-full">
               <WeatherForecast

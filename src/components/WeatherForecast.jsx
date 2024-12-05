@@ -48,7 +48,6 @@ function WeatherForecast({
   };
 
   const getImgWeather = (weather_code) => {
-    console.log(weather_code);
     return weatherPathImg + weatherConditions[weather_code].icon;
   };
 
@@ -75,30 +74,36 @@ function WeatherForecast({
               <span className="mx-2">[---------]</span>
               {forecastDaily.temperature_2m_max[index].toFixed(0)}°C
             </div>
-            <div className="text-center">3 Km/h</div>
+            <div className="hidden text-center lg:block">3 Km/h</div>
           </div>
 
           <div className={`content ${activeIndex === index ? "open" : ""} p-3`}>
-            <div className="flex justify-between">
-              {forecastTemps[index].map((a, ind) => (
-                <span className="" key={ind + 1}>
-                  {a.toFixed(0)}
-                </span>
-              ))}
-            </div>
-            <div className="flex justify-between ">
-              {forecastCodes[index].map((c, ind) => (
-                <span key={ind + 1} className="text-center">
-                  {c}
-                </span>
-              ))}
-            </div>
-            <div className="flex justify-between ">
-              {forecastHour.map((b, ind) => (
-                <span key={ind + 1} className="text-center">
-                  {getMyHour(b)}
-                </span>
-              ))}
+            <div className="flex flex-col flex-wrap gap-3 overflow-x-scroll ">
+              <div className="flex justify-start justify-between gap-5">
+                {forecastTemps[index].map((singleTemp, ind) => (
+                  <div key={ind} className="flex flex-col items-center">
+                    <div className="flex justify-between">
+                      <span className="" key={ind + 1}>
+                        {singleTemp.toFixed(0)}°
+                      </span>
+                    </div>
+
+                    <div className="flex justify-between ">
+                      <img
+                        className="h-5 my-1"
+                        src={`${getImgWeather(forecastCodes[index][ind])}`}
+                        alt="weather-icon"
+                      />
+                    </div>
+
+                    <div className="flex justify-between ">
+                      <span key={ind + 1} className="text-center">
+                        {getMyHour(forecastHour[ind])}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

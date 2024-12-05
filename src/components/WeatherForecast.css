@@ -8,6 +8,7 @@
 .content.open {
   max-height: 384px;
   opacity: 1;
+  transition-delay: 0.25s;
 }
 
 .prova {
